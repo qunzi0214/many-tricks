@@ -1,7 +1,7 @@
 {
   "name": "many-tricks",
   "version": "0.0.1",
-  "description": "personal record of font-end development tricks",
+  "description": "record of font-end development tricks",
   "scripts": {
     "lint": "eslint './src/**/*.{js,jsx,ts,tsx}' --cache --fix",
     "lint:style": "stylelint './src/**/*.{less,css,scss}' --config=.stylelintrc.json --fix",
