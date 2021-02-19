@@ -1,0 +1,17 @@
+{
+  "extends": [
+    "standard",
+    "standard-jsx"
+  ],
+  "plugins": [
+    "react-hooks",
+    "jsx-a11y"
+  ],
+  "rules": {
+    "no-console": "warn",
+    "comma-dangle": [
+      "error",
+      "always-multiline"
+    ]
+  }
+}
