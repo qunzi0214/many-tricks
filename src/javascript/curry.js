@@ -1,14 +1,9 @@
 const curry = (fn, length) => {
   const limit = length || fn.length
-  const caller = (fn, ...arg) => (...newArg) => fn(...[...arg, ...newArg])
-
-  return (...arg) => {
-    if (arg.length < limit) {
-      return curry(caller(fn, ...arg), limit - arg.length)
-    } else {
-      return fn(...arg)
-    }
-  }
+  const caller = (fn, ...arg1) => (...arg2) => fn(...arg1, ...arg2)
+  return (...arg) => arg.length >= limit
+    ? fn(...arg)
+    : curry(caller(fn, ...arg), limit - arg.length)
 }
 
 const fn = curry(function (a, b, c) {
