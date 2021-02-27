@@ -1,9 +1,10 @@
 const asyncChain = fns => {
+  const limit = fns.length
   let index = 0
-  const last = fns[fns.length - 1]
   const next = () => {
-    const fn = fns[index++]
-    fn === last ? fn() : fn(next)
+    index === limit - 1
+      ? fns[index++]()
+      : fns[index++](next)
   }
   next()
 }

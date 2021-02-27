@@ -3,7 +3,7 @@
 const asyncLimitationQueue = (arr, limit) => {
   const shift = () => {
     if (arr.length === 0) return
-    const promise = (arr.shift())()
+    const promise = arr.shift()()
     promise.finally(shift)
     return promise
   }
