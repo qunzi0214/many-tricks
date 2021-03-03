@@ -5,7 +5,8 @@
   "scripts": {
     "lint": "eslint './src/**/*.{js,jsx,ts,tsx}' --cache --fix",
     "lint:style": "stylelint './src/**/*.{less,css,scss}' --config=.stylelintrc.json --fix",
-    "commit": "git add . && git cz"
+    "commit": "git add . && git cz",
+    "serve:react": "webpack serve --config webpack.config.js"
   },
   "author": "qunzi0214",
   "license": "MIT",
