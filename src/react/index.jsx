@@ -6,12 +6,13 @@ import {
   Route,
   Link,
 } from 'react-router-dom'
+import styles from './index.less'
 
 const lowerCase = ([first, ...rest]) => first.toLowerCase() + rest.join('')
 
 const formatPath = path => {
   /\.\/(\w+)/.test(path)
-  return '/' + lowerCase(RegExp.$1)
+  return lowerCase(RegExp.$1)
 }
 
 const loadRoutes = files =>
@@ -31,27 +32,36 @@ const menus = routes.map(({ path, description }) => ({
 
 const Menu = () => {
   return (
-    <>
-      {menus.map(({ path, description }, i) => (
-        <Link to={path} replace key={i}>{path}-{description}</Link>
-      ))}
-    </>
+    <nav className={styles.menu}>
+      <ul>
+        {menus.map(({ path, description }, i) => (
+          <li key={i}>
+            <Link to={`/${path}`} replace>· {path}</Link>
+            <p>{description}</p>
+          </li>
+        ))}
+      </ul>
+    </nav>
   )
 }
 
 ReactDOM.render(
   <Router>
-    <Menu />
-    <Switch>
-      {routes.map((route, index) => (
-        <Route
-          path={route.path}
-          key={index}
-        >
-          {route.component}
-        </Route>
-      ))}
-    </Switch>
+    <main className={styles.root}>
+      <Menu />
+      <section className={styles.playground}>
+        <Switch>
+          {routes.map(({ path, component }, index) => (
+            <Route
+              path={`/${path}`}
+              key={index}
+            >
+              {component}
+            </Route>
+          ))}
+        </Switch>
+      </section>
+    </main>
   </Router>,
   document.getElementById('app'),
 )
