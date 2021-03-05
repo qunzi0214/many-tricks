@@ -43,4 +43,9 @@ function RippleButton ({ children, onClick }) {
   )
 }
 
-export default RippleButton
+export default {
+  description: '实现一个点击后有波纹样式的按钮',
+  component: (
+    <RippleButton>click me</RippleButton>
+  ),
+}
