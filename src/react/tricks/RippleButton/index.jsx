@@ -36,7 +36,6 @@ function RippleButton ({ children, onClick }) {
               top: coords.y,
             }}
           />
-
         : ''}
       <span className={styles.content}>{children}</span>
     </button>
