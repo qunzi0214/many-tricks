@@ -3,7 +3,7 @@ import React, { useRef, useEffect } from 'react'
 const useClickInside = (ref, callback) => {
   const handleClick = e => {
     if (ref.current && ref.current.contains(e.target)) {
-      callback()
+      callback(e)
     }
   }
   useEffect(() => {
@@ -16,7 +16,7 @@ const useClickInside = (ref, callback) => {
 
 const ClickBox = () => {
   const clickRef = useRef()
-  useClickInside(clickRef, () => window.alert('click'))
+  useClickInside(clickRef, (e) => console.log(e))
   return (
     <div
       className='click-box'
@@ -36,7 +36,7 @@ const ClickBox = () => {
 }
 
 export default {
-  description: '实现一个点击后有波纹样式的按钮',
+  description: '通过自定义hooks提取点击事件',
   component: (
     <ClickBox />
   ),
