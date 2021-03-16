@@ -1,8 +1,8 @@
 import React, { useRef, useEffect } from 'react'
 
-const useClickInside = (ref, callback) => {
+const useClickOutside = (ref, callback) => {
   const handleClick = e => {
-    if (ref.current && ref.current.contains(e.target)) {
+    if (ref.current && !ref.current.contains(e.target)) {
       callback(e)
     }
   }
@@ -16,7 +16,7 @@ const useClickInside = (ref, callback) => {
 
 const ClickBox = () => {
   const clickRef = useRef()
-  useClickInside(clickRef, () => window.alert('点击事件在组件内'))
+  useClickOutside(clickRef, () => window.alert('点击事件在组件外'))
   return (
     <div
       className='click-box'
@@ -36,7 +36,7 @@ const ClickBox = () => {
 }
 
 export default {
-  description: '通过自定义hooks定义一个全局的点击事件，只有点击组件区域内，事件才会触发',
+  description: '通过自定义hooks定义一个全局的点击事件，只有点击组件区域外，事件才会触发',
   component: (
     <ClickBox />
   ),
