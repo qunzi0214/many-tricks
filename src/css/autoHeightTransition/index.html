@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+  <div class="trigger">
+    Hover me to see a height transition.
+    <div class="el">
+      <p>通过JavaScript定义一个样式变量 --max-height</p>
+      <p>将 --max-height 赋值为 scrollHeight</p>
+      <p>在样式中定义 hover -> 使用 --max-height</p>
+    </div>
+  </div>
+</body>
+<script>
+  let el = document.querySelector('.el')
+  let height = el.scrollHeight
+  el.style.setProperty('--max-height', height + 'px')
+</script>
+
+</html>

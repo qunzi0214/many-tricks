@@ -30,7 +30,7 @@ const ClickBox = () => {
         alignItems: 'center',
       }}
     >
-      <p>Click inside this element</p>
+      <p>Click out of this element</p>
     </div>
   )
 }
