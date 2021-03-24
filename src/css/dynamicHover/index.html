@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+  <button class="mouse-cursor-gradient-tracking">
+    <span>Hover me</span>
+  </button>
+  <script>
+    let btn = document.querySelector('.mouse-cursor-gradient-tracking')
+    btn.onmousemove = function (e) {
+      let rect = e.target.getBoundingClientRect()
+      let x = e.clientX - rect.left
+      let y = e.clientY - rect.top
+      btn.style.setProperty('--x', x + 'px')
+      btn.style.setProperty('--y', y + 'px')
+    }
+  </script>
+</body>
+
+</html>
