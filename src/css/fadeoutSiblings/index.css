@@ -1,0 +1,8 @@
+span {
+  padding: 0 1rem;
+  transition: opacity 0.3s;
+}
+
+.sibling-fade:hover span:not(:hover) {
+  opacity: 0.5;
+}
