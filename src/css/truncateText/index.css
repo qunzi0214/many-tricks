@@ -1,0 +1,20 @@
+.truncate-text-multiline {
+  overflow: hidden;
+  display: block;
+  height: 109.2px;
+  margin: 0 auto;
+  font-size: 26px;
+  line-height: 1.4;
+  width: 400px;
+  position: relative;
+}
+
+.truncate-text-multiline::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 150px;
+  height: 36.4px;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0), #fff 50%);
+}
