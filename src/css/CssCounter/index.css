@@ -1,0 +1,8 @@
+ul {
+  counter-reset: counter;
+}
+
+li::before {
+  counter-increment: counter;
+  content: counters(counter, '.') ' ';
+}
