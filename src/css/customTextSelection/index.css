@@ -1,0 +1,9 @@
+::selection {
+  background: aquamarine;
+  color: black;
+}
+
+.custom-text-selection::selection {
+  background: deeppink;
+  color: white;
+}
