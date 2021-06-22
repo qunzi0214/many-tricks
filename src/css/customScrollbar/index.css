@@ -1,0 +1,19 @@
+.custom-scrollbar {
+  width: 200px;
+  height: 70px;
+  overflow-y: scroll;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #1e3f20;
+  border-radius: 12px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #4a7856;
+  border-radius: 12px;
+}
