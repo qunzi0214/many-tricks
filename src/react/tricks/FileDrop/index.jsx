@@ -55,13 +55,16 @@ function FileDrop (props) {
 
   return (
     <div
-      ref={dropRef} className={drag
+      ref={dropRef}
+      className={drag
         ? `${styles.filedrop} ${styles.drag}`
         : filename
           ? `${styles.filedrop} ${styles.ready}`
           : `${styles.filedrop}`}
     >
-      {filename && !drag ? <div>{filename}</div> : <div>Drop files here!</div>}
+      {filename && !drag
+        ? <div>{filename}</div>
+        : <div>Drop files here!</div>}
     </div>
   )
 }
